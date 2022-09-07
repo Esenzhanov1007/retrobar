@@ -1,11 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './ModalWindow.scss'
 import {PlaceData} from "../../../types/types";
+import Carousel from "../carousel-photos/Carousel";
+import ShareButton from "../share-button/ShareButton";
 
 const ModalWindow = ({active , setActive, data}: {
     active: boolean,
     setActive: React.Dispatch<React.SetStateAction<boolean>>,
     data : PlaceData}) => {
+    const [slideNumber, setSlideNumber] = useState(1);
 
     const closeModal = () => {
         setActive(false);
@@ -26,15 +29,15 @@ const ModalWindow = ({active , setActive, data}: {
                 </div>
                 <div
                     className="modal_body">
-
+                    <Carousel data={data} setCount={setSlideNumber}/>
                 </div>
                 <div
                     className="modal_footer">
                     <div className="modal_footer_photos-amount">
-                        <span className="">{1 + ' из ' + data.photos.length}</span>
+                        <span className="">{slideNumber + ' из ' + data.photos.length}</span>
                     </div>
                     <div className="modal_footer_btn-group">
-                        <button className="modal_footer_btn-group__share">Поделиться</button>
+                        <ShareButton/>
                         <button className="modal_footer_btn-group__download">Скачать</button>
                     </div>
                 </div>

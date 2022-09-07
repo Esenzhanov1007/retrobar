@@ -1,24 +1,25 @@
 .ad_block {
-
+  color: #FFFFFF;
 }
 
 .first_ad_block {
   position: absolute;
-  left:0;
-  right:0;
-  top:0;
-  bottom:0;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
   overflow: hidden;
 
   &::after {
     content: '';
     position: absolute;
     top: -108px;
-    right: 70px;
+    right: 10%;
     width: 316px;
     height: 316px;
     background: url("../../../assets/icons/big_star.svg") no-repeat;
   }
+
   &::before {
     content: '';
     position: absolute;
@@ -29,15 +30,15 @@
     background: url("../../../assets/icons/small_star.svg") no-repeat;
   }
 
-  &__title{
-      font-family: 'Montserrat Alternates', serif;
-      font-style: normal;
-      font-weight: 700;
-      font-size: 28px;
-      line-height: 34px;
-      max-width: 300px;
-      padding: 30px 40px;
-      margin-bottom: 50px;
+  &__title {
+    font-family: 'Montserrat Alternates', serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 34px;
+    max-width: 300px;
+    padding: 30px 40px;
+    margin-bottom: 50px;
   }
 
   &__description {
@@ -63,6 +64,7 @@
     line-height: 34px;
     padding-top: 30px;
     margin-bottom: 30px;
+
     &::before {
       content: '';
       position: absolute;
@@ -85,7 +87,6 @@
   }
 
 }
-
 
 .btn_call {
   border: none;

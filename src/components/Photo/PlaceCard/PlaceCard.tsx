@@ -14,7 +14,6 @@ const PlaceCard = ({data}: { data: PlaceData }) => {
                     {data.placeName}
                     <span
                         className={styles.body_subtitle}>{data.eventName}</span>
-                    {/*<span className={styles.body_studio_title}>{data.photographName}</span>*/}
                 </h4>
                 <div className={styles.body_actions}>
                     <span className={styles.body_actions__views}>{data.views}</span>

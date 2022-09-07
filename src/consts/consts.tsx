@@ -9,6 +9,8 @@ const ADMIN_CONTACTS_PAGE = "/admin/contacts";
 const ADMIN_EDIT_PAGE = "/admin/edit";
 const MAIN_PAGE = "/";
 const PHOTO_PAGE = "/photo";
+const VIDEO_PAGE = "/videos";
+const VIDEO_PLAYER_PAGE = "/videos/player/:id";
 
 export {
   API,
@@ -22,4 +24,6 @@ export {
   ADMIN_VIDEO_PAGE,
   MAIN_PAGE,
   PHOTO_PAGE,
+  VIDEO_PAGE,
+  VIDEO_PLAYER_PAGE
 }

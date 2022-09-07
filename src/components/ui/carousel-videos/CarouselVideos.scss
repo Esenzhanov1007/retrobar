@@ -1,0 +1,106 @@
+.videosSwiper {
+  max-height: 251px;
+  width: 100%;
+  background: transparent;
+  margin: 0 auto 50px;
+
+  & .swiper-slide {
+    position: relative;
+    text-align: center;
+    font-size: 0;
+    background: #fff;
+    max-width: 436px;
+    min-width: 300px;
+    max-height: 251px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 10px;
+
+    &::before {
+      position: absolute;
+      content: '';
+      height: 24px;
+      width: 21px;
+      top: 20px;
+      right: 30px;
+      background: url("../../../assets/icons/play_icon_small.svg") no-repeat;
+      z-index: 10;
+    }
+
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .swiper-button-next, .swiper-button-prev  {
+    position: absolute;
+    top: 50%;
+    width: 38px !important;
+    height: 38px;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    background: rgba(184, 184, 184, 0.5);
+
+    &::after {
+      display: none;
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 50%;
+      left: 50%;
+      width: 18px;
+      height: 12px;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .swiper-button-prev {
+    &::before {
+      background: url("../../../assets/icons/left.svg");
+    }
+  }
+
+  .swiper-button-lock {
+    display: block;
+  }
+
+  .swiper-button-next {
+    &::before {
+      background: url("../../../assets/icons/right.svg");
+    }
+  }
+
+  .swiper-button-next, .swiper-rtl .swiper-button-prev {
+    right: 10%;
+    left: auto;
+  }
+
+  .swiper-button-prev, .swiper-rtl .swiper-button-next {
+    left: 10%;
+    right: auto;
+  }
+}
+
+.title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  color: #EBEBEB;
+  max-width: 922px;
+  padding-top: 30px;
+  margin: 0 auto 30px;
+}

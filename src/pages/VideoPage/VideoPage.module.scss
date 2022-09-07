@@ -1,0 +1,33 @@
+.container {
+  position: relative;
+  background-size: cover;
+  mix-blend-mode: screen;
+  padding: 100px 30px 0;
+
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: url('../../../src/assets/VideoPage/background.png');
+    background-size: cover;
+    opacity: 0.7;
+    filter: blur(5px);
+    transform: matrix(1, 0, 0, -1, 0, 0);
+}
+}
+
+.player_wrapper {
+  position: relative;
+  z-index: 10;
+  max-width: 922px;
+  height: 518px;
+  margin: 0 auto;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+

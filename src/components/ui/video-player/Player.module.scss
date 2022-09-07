@@ -1,0 +1,25 @@
+.btn_play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 96px;
+  width: 96px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: transparent;
+  display: block;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 56%;
+    transform: translate(-50%, -50%);
+    width: 31px;
+    height: 39px;
+    background: url('../../../assets/icons/play_icon.svg') no-repeat;
+  }
+}

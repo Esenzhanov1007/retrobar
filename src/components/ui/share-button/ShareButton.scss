@@ -1,0 +1,56 @@
+.btn_share {
+  position: relative;
+  background: transparent;
+  border: none;
+  color: white;
+  width: 158px;
+  height: 44px;
+  padding-right: 30px;
+  margin-right: 20px;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 20px;
+    background: url('../../../assets/icons/share.svg') no-repeat;
+    background-size: cover;
+  }
+}
+
+.btn_group {
+  position: absolute;
+  display: flex;
+  justify-content: flex-start;
+  width: 350px;
+  align-items: center;
+  animation: swing-top-fwd 0.4s linear both;
+
+  & > button {
+    margin: 1px;
+  }
+}
+
+.swing-in-top-fwd {
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+}
+
+@keyframes swing-in-top-fwd {
+  0% {
+    transform: rotateX(-100deg);
+    transform-origin: top;
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0deg);
+    transform-origin: top;
+    opacity: 1;
+  }
+}
+
+
+

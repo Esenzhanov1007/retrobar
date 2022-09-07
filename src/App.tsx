@@ -3,6 +3,7 @@ import MainRoutes from './routes/routes';
 import Header from "./layout/Header/Header";
 import { useLocation } from 'react-router-dom';
 
+
 function App() {
 
   const { pathname } = useLocation();

@@ -13,3 +13,21 @@ export interface AdData {
     title: string,
     description: string,
 }
+
+export interface ReportVideo
+{
+    views: number,
+    id: number,
+    eventName: string,
+    date: string,
+    link: string,
+    eventVideos: string[],
+    preview: string[],
+    "pubId": number,
+    "photographerId": number
+}
+
+
+
+
+
