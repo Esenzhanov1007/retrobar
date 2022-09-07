@@ -4,9 +4,21 @@
 
 .textInputs {
   margin-bottom: 1%;
+  position: relative;
+
+  & span {
+    position: absolute;
+    top: 22%;
+    left: 0;
+    height: 18px;
+    width: 100%;
+    font-size: 14px;
+    color: #ec5990;
+  }
 }
 
 .textInputsTitle {
+  color: #FFB03B;
   font-size: 22px;
   font-weight: 600;
   margin: 0px 0 10px;

@@ -1,6 +1,151 @@
 .main_container {
-  width:  100%;
+  width:  1440px;
   min-height: 100vh;
   display: flex;
+  justify-content: flex-end;
   background-color: #000;
+  margin: 0 auto;
 }
+
+.institution_content {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 84%;
+}
+
+.content_fileInput {
+  width: 45%;
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.fileInputTitle {
+  margin: 30px 0;
+  margin-left: 3%;
+  font-size: 32px;
+  color:#fff;
+}
+
+.institutionImgWrapper {
+  display: flex;
+  justify-content: space-around;
+  width: 84%;
+  margin-left: 1.9%;
+}
+
+.institutionInfoWrapper {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 84%;
+  margin-left: 6.5%;
+}
+
+.institutionTitleInput {
+  width: 100%;
+
+  & input {
+    width: 40%;
+  }
+}
+
+.institutionDescrInput {
+  width: 100%;
+
+  & h2 {
+    color: #FFB03B;
+  }
+}
+
+.intitutionRatingWrapper {
+  height: 275px;
+  width: 84%;
+  background-color: white;
+  margin-left: 6.5%;
+  margin-bottom: 80px;
+
+  & canvas {
+    height: 100% !important;
+    width: 100%;
+  }
+}
+
+.institutionDescrInputWrapper {
+  width: 84%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 6.5%;
+  margin-bottom: 60px;
+}
+
+.institutionDescrInputTitleWrapper {
+  width: 100%;
+}
+
+.descrInputTitle {
+  color: #FFB03B;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.descrInputs {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  & div {
+    margin-top: 1% !important;
+    width: 43%;
+
+    & h2 {
+      color: white;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.institutionContactsWrapper {
+  width: 84%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 6.5%;
+}
+
+.contactsTitleWrapper {
+  width: 100%;
+}
+
+.contactsTitle {
+  color: #FFB03B;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.contactsLinkInput {
+
+  width: 100%;
+  margin-bottom: 30px;
+
+  & div {
+    margin-left: 0;
+    width: 70%;
+  }
+}
+
+.contactsInputs {
+  width: 100%;
+
+  & div {
+    width: 43%;
+    margin-top: 0 !important;
+
+    & h2 {
+      color: white;
+    }
+  }
+}
+

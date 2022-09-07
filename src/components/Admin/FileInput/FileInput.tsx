@@ -11,7 +11,7 @@ const FileInput: FC<FileInputProps> = ({title, fileIcon, addFileTitle}) => {
   return (
     <>
       <div className={styles.fileInputWrapper}>
-      <input 
+      <input
         name='file' 
         type="file" 
         id="input_img" 
