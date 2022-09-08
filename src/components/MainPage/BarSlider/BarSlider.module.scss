@@ -1,0 +1,268 @@
+.BarSlider__title {
+  color: #fff;
+}
+
+.swiper_parent_title {
+  color: #fff;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  margin-left: 10%;
+}
+
+
+.slider__wrapper {
+  position: relative;
+  width: 545px;
+
+  .barslider__frame {
+    position: relative;
+    width: 100%;
+  }
+
+  .barslider__bg {
+    width: 95%;
+    height: 207px;
+    position: absolute;
+    left: 1.7%;
+    top: 13%;
+    opacity: 92%;
+  }
+
+  .barslider__about {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+  }
+
+  .barslider__about__title {
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 26px;
+    color: #FFFFFF;
+    margin-bottom: 33px;
+  }
+
+  .barslider__about__time {
+    display: flex;
+    gap: 7.4px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+  }
+
+  .barslider__about__phone {
+    display: flex;
+    gap: 7.4px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+    margin: 15px 0;
+  }
+
+  .barslider__about__geotag {
+    display: flex;
+    gap: 7.4px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+  }
+}
+
+
+
+@media screen and (max-width: 1025px){
+  .slider__wrapper {
+    position: relative;
+    width: 600px;
+
+    .barslider__frame {
+      position: relative;
+      width: 80%;
+    }
+
+    .barslider__bg {
+      width: 75.9%;
+      height: 192px;
+      position: absolute;
+      left: 1.3%;
+      top: 9.5%;
+    }
+    .barslider__about {
+      position: absolute;
+      top: 16%;
+      left: 5%;
+    }
+
+    .barslider__about__title {
+      font-weight: 800;
+      font-size: 19px;
+      line-height: 26px;
+      color: #FFFFFF;
+    }
+
+    .barslider__about__time {
+      display: flex;
+      gap: 7.4px;
+      font-weight: 600;
+      font-size: 15px;
+      line-height: 18px;
+      color: #FFFFFF;
+    }
+
+    .barslider__about__phone {
+      display: flex;
+      gap: 7.4px;
+      font-weight: 600;
+      font-size: 15px;
+      line-height: 18px;
+      color: #FFFFFF;
+    }
+
+    .barslider__about__geotag {
+      display: flex;
+      gap: 7.4px;
+      font-weight: 600;
+      font-size: 15px;
+      line-height: 18px;
+      color: #FFFFFF;
+    }
+  }
+}
+
+@media screen and (max-width: 862px){
+  .slider__wrapper {
+    position: relative;
+    width: 520px;
+
+    .barslider__frame {
+      position: relative;
+      width: 80%;
+    }
+
+    .barslider__bg {
+      width: 75.9%;
+
+      height: 165px;
+      position: absolute;
+      left: 1.3%;
+      top: 9.5%;
+    }
+
+    .barslider__about {
+      position: absolute;
+      top: 15%;
+      left: 5%;
+    }
+
+    .barslider__about__title {
+      font-weight: 800;
+      font-size: 14px;
+      line-height: 24px;
+      color: #FFFFFF;
+    }
+
+    .barslider__about__time {
+      display: flex;
+      gap: 7.4px;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 16px;
+      color: #FFFFFF;
+    }
+
+    .barslider__about__phone {
+      display: flex;
+      gap: 7.4px;
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 16px;
+      color: #FFFFFF;
+    }
+
+    .barslider__about__geotag {
+      display: flex;
+      gap: 7.4px;
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 16px;
+      color: #FFFFFF;
+    }
+  }
+}
+
+@media screen and (max-width: 500px){
+  .slider__wrapper {
+    position: relative;
+    width: 390px;
+
+    .barslider__frame {
+      position: relative;
+      width: 75%;
+    }
+
+    .barslider__bg {
+      width: 71.2%;
+
+      height: 118px;
+      position: absolute;
+      left: 1.3%;
+      top: 9.5%;
+    }
+
+    .barslider__about {
+      position: absolute;
+      top: 8%;
+      left: 5%;
+    }
+
+    .barslider__about__title {
+      font-weight: 800;
+      font-size: 11px;
+      line-height: 22px;
+      color: #FFFFFF;
+    }
+
+    .barslider__about__time {
+      display: flex;
+      gap: 7.4px;
+      font-weight: 600;
+      font-size: 8px;
+      line-height: 9px;
+      color: #FFFFFF;
+
+      img {
+        width: 10px;
+      }
+    }
+
+    .barslider__about__phone {
+      display: flex;
+      gap: 7.4px;
+      font-weight: 600;
+      font-size: 8px;
+      line-height: 9px;
+      color: #FFFFFF;
+
+      img {
+        width: 10px;
+      }
+    }
+
+    .barslider__about__geotag {
+      display: flex;
+      gap: 7.4px;
+      font-weight: 600;
+      font-size: 8px;
+      line-height: 9px;
+      color: #FFFFFF;
+
+      img {
+        width: 10px;
+      }
+    }
+  }
+}

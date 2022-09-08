@@ -1,0 +1,63 @@
+.eventBlock {
+  max-width: 1123px;
+  margin: 0 auto;
+
+  &__title {
+    padding-left: 10%;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    margin: 0 0 40px;
+    color: #fff;
+  }
+
+  &__events {
+    background: url('../../../assets/EventPage/filmcollage.png') repeat-y;
+    background-size: contain;
+    max-width: 1123px;
+    display: flex;
+    flex-basis: 303px;
+    flex-wrap: wrap;
+    justify-content: start;
+    margin-bottom: 60px;
+    padding: 18px 0 0 10%;
+    @media (max-width: 830px) {
+      background: url('../../../assets/EventPage/filmreel_sm.png') repeat-y;
+      background-size: 100% auto;
+      padding: 0;
+    }
+
+    & .item {
+      width: 50%;
+      padding: 0 7% 0 21px;
+      box-sizing: border-box;
+      height: 401px;
+      margin-bottom: 10px;
+
+      @media (max-width: 830px) {
+        width: 100%;
+        padding: 0 10%;
+      }
+    }
+  }
+
+  &__seeAllBtn {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+
+
+    &:hover {
+      color: #FF6D00;
+      text-decoration: underline;
+    }
+  }
+}

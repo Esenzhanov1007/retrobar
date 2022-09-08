@@ -36,7 +36,7 @@ const SocialButtons = () => {
     return (
         <div className="btn_group swing-in-top-fwd">
             <FacebookShareButton
-                url="https://snyk.io/advisor/npm-package/react-share/example"
+                url={window.location.href}
             >
                 <FacebookIcon
                     size={32}

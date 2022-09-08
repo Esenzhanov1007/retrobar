@@ -1,0 +1,18 @@
+.institution {
+  //padding: 60px 0 30px;
+  background-image: url('../../../assets/icons/news/paper.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  min-height: 1500px;
+}
+
+@media screen and (max-width: 835px) {
+  .institution {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    min-height: 1500px;
+    background-image: url('../../../assets/icons/news/paper3.png');
+  }
+}
+
+

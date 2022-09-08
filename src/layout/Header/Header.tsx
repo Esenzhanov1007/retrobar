@@ -4,7 +4,7 @@ import search from '../../assets/icons/search.svg'
 import star from '../../assets/icons/bigstarburger.svg'
 import {NavLink} from "react-router-dom";
 import styles from './Header.module.scss'
-import SearchInput from "./components/SearchInput/SearchInput";
+import SearchForm from "../search-form/SearchForm";
 import {FcMenu} from "react-icons/all";
 import HamburgerMenu from "./components/HamburgerMenu";
 
@@ -51,17 +51,19 @@ const Header = () => {
                         </a>
                     </div>
                     <nav className={styles.menu}>
-                        {data.map((item) => (
-                            <NavLink to={item.path}
+                        {data.map((item, index) => (
+                            <NavLink key={index} to={item.path}
                                      className={({isActive}) => isActive ? styles.menu__link__active : styles.menu__link}>{item.label}</NavLink>
                         ))}
                         <button className={styles.menu__btn}>
                             <img onClick={() => setOpen(!open)} src={search} alt=""/>
-                            <SearchInput open={open}/>
                         </button>
                         <HamburgerMenu />
                         <img className={styles.star} src={star} alt="star"/>
                     </nav>
+                </div>
+                <div className={styles.search__input}>
+                    {open && <SearchForm className={styles.search__form}/>}
                 </div>
             </div>
         </header>

@@ -11,7 +11,8 @@ import {
   MAIN_PAGE,
   PHOTO_PAGE,
   VIDEO_PAGE,
-  VIDEO_PLAYER_PAGE
+  VIDEO_PLAYER_PAGE,
+  EVENT_PAGE,
 } from "../consts/consts";
 
 import AdminAdvertisinPage from "../pages/AdminAdvertisingPage/AdminAdvertisinPage";
@@ -23,16 +24,18 @@ import AdminPhotoPage from "../pages/AdminPhotoPage/AdminPhotoPage";
 import AdminPosterPage from "../pages/AdminPosterPage/AdminPosterPage";
 import AdminVideoPage from "../pages/AdminVideoPage/AdminVideoPage";
 import PhotoPage from "../pages/PhotoPage/PhotoPage";
+import MainPage from "../pages/MainPage/MainPage";
 import {useId} from "react";
 import VideoPage from "../pages/VideoPage/VideoPage";
 import VideoPlayerPage from "../pages/VideoPlayerPage/VideoPlayerPage";
+import EventPage from "../pages/EventPage/EventPage";
 
 const MainRoutes = () => {
 
   const PUBLIC_ROUTES = [
     {
       path: MAIN_PAGE,
-      Component: <></>,
+      Component: <MainPage />,
       id: useId(),
     },
     {
@@ -81,6 +84,11 @@ const MainRoutes = () => {
     {
       path: VIDEO_PLAYER_PAGE,
       Component: <VideoPlayerPage />,
+      id: useId(),
+    },
+    {
+      path: EVENT_PAGE,
+      Component: <EventPage />,
       id: useId(),
     },
     {

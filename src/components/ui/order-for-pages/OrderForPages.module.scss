@@ -1,0 +1,62 @@
+.order {
+  max-width: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('../../../assets/icons/order/orderbg.png');
+
+
+
+  &__inner {
+    position: relative;
+    padding: 11% 11% 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20%;
+  }
+
+  .order__image {
+    margin-top: 40px;
+    img {
+      width: 490px;
+    }
+  }
+
+  .order__service {
+    padding-bottom: 10px;
+    text-align: center;
+    .service__title {
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 44px;
+      color: #FFFFFF;
+      text-align: center;
+    }
+
+    .service__text {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+      color: #FFFFFF;
+      margin: 48px 0 55px;
+      width: 544px;
+    }
+
+    .service__btn {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 24px;
+      text-align: right;
+      color: #000000;
+      background-color: #FFB13B;
+      border-radius: 10px;
+      padding: 17px 33px;
+      border: none;
+      cursor: pointer;
+      transition: all .5s;
+    }
+  }
+
+}

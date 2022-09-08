@@ -11,6 +11,7 @@ const MAIN_PAGE = "/";
 const PHOTO_PAGE = "/photo";
 const VIDEO_PAGE = "/videos";
 const VIDEO_PLAYER_PAGE = "/videos/player/:id";
+const EVENT_PAGE = "/events"
 
 export {
   API,
@@ -25,5 +26,6 @@ export {
   MAIN_PAGE,
   PHOTO_PAGE,
   VIDEO_PAGE,
-  VIDEO_PLAYER_PAGE
+  VIDEO_PLAYER_PAGE,
+  EVENT_PAGE
 }

@@ -1,16 +1,18 @@
 import { useState, useRef } from 'react';
+import logo from '../../../../assets/icons/logo.svg'
 import styles from './styles.module.scss';
 import classNames from 'classnames';
 import HamburgerIcon from './HamburgerIcon';
-import SearchInput from "../SearchInput/SearchInput";
 import telegram from '../../../../assets/icons/telegram.svg'
 import instagram from '../../../../assets/icons/instagram.svg'
 import youtube from '../../../../assets/icons/youtube.svg'
 import mail from '../../../../assets/icons/mail.svg'
+import SearchForm from "../../../search-form/SearchForm";
+import {Link} from "react-router-dom";
 
 const data = [
     {
-        path: '/',
+        path: '/photo',
         label: 'Фото'
     },
     {
@@ -43,21 +45,25 @@ function HamburgerMenu() {
         <div className={styles.hamburger}>
             <HamburgerIcon isOpen={isOpen} setOpen={setOpen} />
             <div
+                onClick={() => setOpen(false)}
                 className={classNames(styles.menu, {
                     [styles.menuOpen]: isOpen === true
                 })}
                 ref={menuRef}
             >
                 <div>
+                    <div className={styles.logo__burger}>
+                        <img src={logo} alt=""/>
+                    </div>
                     <div className={styles.search__input}>
-                        <SearchInput open={true} />
+                        <SearchForm className={styles.search__form__burger} />
                     </div>
                     <ul className={styles.menu__list}>
                         {data.map(item => (
                             <li className={styles.menu__item} key={item.path}>
-                                <a className={styles.menu__link} href={item.path}>
+                                <Link to={item.path} className={styles.menu__link} onClick={() => setOpen(false)}>
                                     <span>{item.label}</span>
-                                </a>
+                                </Link>
                             </li>
                         ))}
                     </ul>
