@@ -8,6 +8,7 @@ import {   Chart as ChartJS,
   Title,
   Tooltip,
   Legend,
+  Filler
 } from "chart.js";
 
 ChartJS.register(
@@ -17,19 +18,46 @@ ChartJS.register(
   LineElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
+  Filler
 );
 
 export const options = {
   responsive: true,
+  elements: {
+    point: {
+      radius: 0,
+    },
+  },
+  scales: {
+    y: {
+      beginAtZero: true,
+      ticks: {
+        display: false,
+      },
+      grid: {
+        drawTicks: false,
+        drawBorder: false,
+      }
+    },
+    x: {
+      beginAtZero: true,
+      ticks: {
+        display: false,
+      },
+      grid: {
+        drawTicks: false,
+        drawBorder: false,
+      }
+    }
+  },
   plugins: {
-    legend: {
-      position: 'top' as const,
-    },
     title: {
-      display: true,
-      text: 'Chart.js Line Chart',
+      display: false,
     },
+    legend: {
+      display: false,
+    }
   },
 };
 

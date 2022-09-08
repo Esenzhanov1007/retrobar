@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import AdminNavbar from '../../components/Admin/AdminNavbar/AdminNavbar';
 import FileInput from '../../components/Admin/FileInput/FileInput';
 import styles from "./AdminInstitutionPage.module.scss";
@@ -13,6 +13,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { institutionSchema } from './InstitutionValidation';
 import { useForm } from 'react-hook-form';
 import LineChart from './components/LineChart';
+import { Rating } from '@mui/material';
 
 const AdminInstitutionPage = () => {
 
@@ -70,20 +71,19 @@ const AdminInstitutionPage = () => {
     {
       id: 7,
       date: "31 мая",
-      rate: 3,
+      rate: 1,
     },
   ]
 
   const [rate, setRate] = useState({
     labels: rateData.map((item) => item.date),
     datasets: [{
-      label: "Rating",
-      data: rateData.map((item) => item.rate),
-      borderColor: 'rgb(75, 192, 192)',
+      label: "",
+      data: rateData.map((item) => item.rate - 1),
+      backgroundColor: "#FF531E",
       tension: 0.4,
-      borderJoinStyle: "round",
       capBezierPoints: false,
-      fill: "rgb(255, 176, 59)",
+      fill: true,
     }]
   })
   const [data, setData] = useState({});
@@ -120,7 +120,21 @@ const AdminInstitutionPage = () => {
           </div>
         </div>
         <div className={styles.intitutionRatingWrapper}>
-          <LineChart chartData={rate} />
+          <div className={styles.ratingTitleWrapper}>
+            <div className={styles.ratingTitleStar}>
+              <h3>Рейтинг</h3>
+              <Rating name="half-rating-read" defaultValue={5} precision={0.5} readOnly size='large' color='red' />
+            </div>
+            <div className={styles.ratingTitle}>
+              <h3>Рейтнг за май 2022</h3>
+            </div>
+          </div>
+          <div className={styles.ratingWrapper}>
+            <LineChart chartData={rate} />
+            <div className={styles.ratingDate}>
+            { rateData.map((item) => <h5>{item.date}</h5>)}
+            </div>
+          </div>
         </div>
         <div className={styles.institutionDescrInputWrapper}>
           <div className={styles.institutionDescrInputTitleWrapper}>
