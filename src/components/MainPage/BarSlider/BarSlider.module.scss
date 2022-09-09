@@ -195,6 +195,15 @@
 }
 
 @media screen and (max-width: 500px){
+
+  .swiper_parent_title {
+    color: #fff;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    margin-left: 17%;
+  }
+
   .slider__wrapper {
     position: relative;
     width: 390px;
@@ -264,5 +273,15 @@
         width: 10px;
       }
     }
+  }
+}
+
+@media screen and (max-width: 321px){
+  .swiper_parent_title {
+    color: #fff;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    margin-left: 10%;
   }
 }

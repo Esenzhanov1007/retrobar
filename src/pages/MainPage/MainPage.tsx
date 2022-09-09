@@ -18,7 +18,7 @@ const MainPage = () => {
             </div>
             {/*<PhotoReport />*/}
             <Institution />
-            <OrderForPages />
+            {/*<OrderForPages />*/}
             <Footer />
         </div>
     );
