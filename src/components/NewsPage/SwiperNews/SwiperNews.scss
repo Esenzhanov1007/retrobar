@@ -1,0 +1,18 @@
+.newsSwiper {
+    color: #fff;
+    margin: 0 auto;
+    transform: rotate(2deg);
+
+
+    &__slide-container {
+        transform: none !important;
+        height: 322px;
+        width: 409px !important;
+        background: url('../../../assets/NewsPage/polaroid.png') no-repeat;
+        background-size: 100% auto;
+    }
+}
+
+.swiper-wrapper {
+    transform: translate3d(30px, 0px, 0px);
+}

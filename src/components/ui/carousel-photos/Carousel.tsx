@@ -8,10 +8,7 @@ import "swiper/css/navigation";
 
 import {PlaceData} from "../../../types/types";
 
-
 const Carousel = ({data, setCount}: {data: PlaceData, setCount?: React.Dispatch<React.SetStateAction<number>>}) => {
-
-
 
     return (
             <Swiper
