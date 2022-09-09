@@ -13,6 +13,7 @@ import {
   VIDEO_PAGE,
   VIDEO_PLAYER_PAGE,
   EVENT_PAGE,
+  NEWS_PAGE
 } from "../consts/consts";
 
 import AdminAdvertisinPage from "../pages/AdminAdvertisingPage/AdminAdvertisinPage";
@@ -29,6 +30,7 @@ import {useId} from "react";
 import VideoPage from "../pages/VideoPage/VideoPage";
 import VideoPlayerPage from "../pages/VideoPlayerPage/VideoPlayerPage";
 import EventPage from "../pages/EventPage/EventPage";
+import NewsPage from '../pages/NewsPage/NewsPage';
 
 const MainRoutes = () => {
 
@@ -55,6 +57,11 @@ const MainRoutes = () => {
     {
       path: EVENT_PAGE,
       Component: <EventPage />,
+      id: useId(),
+    },
+    {
+      path: NEWS_PAGE,
+      Component: <NewsPage />,
       id: useId(),
     },
   ];
