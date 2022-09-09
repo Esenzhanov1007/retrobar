@@ -5,7 +5,7 @@ import styles from "./PublishBtn.module.scss";
 const PublishBtn = () => {
   return (
     <div className={styles.publishBtnWrapper}>
-      <button className={styles.publishBtn}>Опубликовать</button>
+      <input type="submit" value="Опубликовать" className={styles.publishBtn} />
     </div>
   );
 };

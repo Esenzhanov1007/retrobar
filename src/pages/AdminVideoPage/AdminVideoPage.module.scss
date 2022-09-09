@@ -11,6 +11,7 @@
   display: flex;
   justify-content: space-around;
   width: 84%;
+  min-height: 101vh;
 }
 
 .content_fileInput {
@@ -26,4 +27,14 @@
   margin-left: 3%;
   font-size: 32px;
   color:#fff;
+}
+
+.content_textInputs {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  color: #FFB03B;
+  margin: 7% 10% 0 5%;
+  justify-content: flex-start;
+  font-size: 22px;
 }

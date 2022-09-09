@@ -7,17 +7,16 @@ interface FileInputProps {
   addFileTitle: string;
 }
 
-const FileInput: FC<FileInputProps> = ({title, fileIcon, addFileTitle}) => {
+const FileInput: FC<FileInputProps> = ({fileIcon, addFileTitle}) => {
   return (
     <>
       <div className={styles.fileInputWrapper}>
-      <input 
-        name='file' 
+      <input
         type="file" 
         id="input_img" 
         className={styles.fileInput}
         multiple/>
-      <label htmlFor="input_img" className={styles.fileInputBtn}>
+      <label htmlFor="input_img" className={styles.fileInputBtn} >
         <span className={styles.fileInputIconWrapper}>
           <img className={styles.fileInputIcon} 
           src={fileIcon}
