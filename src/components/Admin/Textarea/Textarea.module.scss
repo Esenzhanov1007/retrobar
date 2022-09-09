@@ -1,5 +1,16 @@
 .textareaWrapper {
   margin-bottom: 1%;
+  position: relative;
+
+  & span {
+    position: absolute;
+    top: 22%;
+    left: 0;
+    height: 18px;
+    width: 100%;
+    font-size: 14px;
+    color: #ec5990;
+  }
 }
 
 .textareaTitle {

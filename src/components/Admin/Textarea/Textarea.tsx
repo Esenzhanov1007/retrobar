@@ -3,17 +3,12 @@ import styles from "./Textarea.module.scss";
 
 interface TextareaProps {
   title: string,
+  name: string,
+  register: (a: string) => {},
+  error: {} | undefined,
 }
 
-const Textarea: FC<TextareaProps> = ({title}) => {
-
-  const [currentValue, setCurrentValue ] = useState("");
-
-  // useEffect(() => {
-  //     textareaRef.current.style.height = "0px";
-  //     const scrollHeight = textareaRef.current.scrollHeight;
-  //     textareaRef.current.style.height = scrollHeight + "px";
-  // }, [currentValue]);
+const Textarea: FC<TextareaProps> = ({title, name, register, error}) => {
 
   function handleHeight(e: any) {
     e.target.style.height = "0px";
@@ -24,13 +19,11 @@ const Textarea: FC<TextareaProps> = ({title}) => {
   return (
     <div className={styles.textareaWrapper}>
       <h2 className={styles.textareaTitle}>{title}</h2>
+      <span>{error ? "Поле обязательно к заполнению!" : ""}</span>
       <textarea 
-      // onChange={(e) => handleCols(e.target.value.length)} 
-      // onChange={(e) => console.log(e.target.value.length)}
+      {...register(name)}
       className={styles.textarea}
-      value={currentValue}
       onChange={e=>{
-        setCurrentValue(e.target.value);
         handleHeight(e);
       }}
       />
