@@ -1,61 +1,90 @@
 .order {
-  max-width: 100%;
-  background-position: center;
-  background-size: cover;
+  display: flex;
   background-repeat: no-repeat;
   background-image: url('../../../assets/icons/order/orderbg.png');
+  background-size: 100% 100%;
+  margin-bottom: 5%;
+  height: 500px;
+  justify-content: space-evenly;
 
-
-
-  &__inner {
-    position: relative;
-    padding: 11% 11% 2%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20%;
+  @media (max-width: 768px) {
+    background-image: url('../../../assets/icons/order/film-sm.png');
+    flex-direction: column;
+    height: 649px;
   }
 
   .order__image {
-    margin-top: 40px;
+    width: 50%;
+    padding: 171px 9vw 33px 8vw;
+    box-sizing: border-box;
+    @media (max-width: 768px) {
+      width: 100%;
+      padding: 66px 9vw 0 17vw;
+    }
+
     img {
-      width: 490px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: rotate(1deg);
     }
   }
 
   .order__service {
-    padding-bottom: 10px;
+    width: 50%;
     text-align: center;
-    .service__title {
+    box-sizing: border-box;
+    padding: 150px 7% 0 0;
+    @media (max-width: 768px) {
+      width: 100%;
+      padding: 0 0 0 0;
+    }
+
+    & > h4 {
       font-weight: 700;
       font-size: 36px;
       line-height: 44px;
       color: #FFFFFF;
       text-align: center;
+      margin-bottom: 25px;
+      @media (max-width: 768px) {
+        font-size: 22px;
+        margin: 10px;
+      }
+
     }
 
-    .service__text {
+    & > p {
+      color: #FFFFFF;
+      font-style: normal;
       font-weight: 600;
       font-size: 16px;
       line-height: 20px;
       text-align: center;
-      color: #FFFFFF;
-      margin: 48px 0 55px;
-      width: 544px;
+      margin-bottom: 50px;
+      @media (max-width: 768px) {
+        font-size: 12px;
+        margin-bottom: 10px;
+        padding: 0 18%;
+      }
     }
 
     .service__btn {
       font-weight: 600;
       font-size: 20px;
       line-height: 24px;
-      text-align: right;
       color: #000000;
       background-color: #FFB13B;
       border-radius: 10px;
-      padding: 17px 33px;
+      text-align: center;
       border: none;
       cursor: pointer;
       transition: all .5s;
+      @media (max-width: 768px) {
+        width: 163px;
+        height: 52px;
+      }
+
     }
   }
 
