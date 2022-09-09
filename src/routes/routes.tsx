@@ -12,7 +12,7 @@ import {
   PHOTO_PAGE,
   VIDEO_PAGE,
   VIDEO_PLAYER_PAGE,
-  EVENT_PAGE,
+  EVENT_PAGE, INSTITUTION_PAGE,
 } from "../consts/consts";
 
 import AdminAdvertisinPage from "../pages/AdminAdvertisingPage/AdminAdvertisinPage";
@@ -29,6 +29,7 @@ import {useId} from "react";
 import VideoPage from "../pages/VideoPage/VideoPage";
 import VideoPlayerPage from "../pages/VideoPlayerPage/VideoPlayerPage";
 import EventPage from "../pages/EventPage/EventPage";
+import InstitutionPage from "../pages/InstitutionPage/InstitutionPage";
 
 const MainRoutes = () => {
 
@@ -57,6 +58,11 @@ const MainRoutes = () => {
       Component: <EventPage />,
       id: useId(),
     },
+    {
+      path: INSTITUTION_PAGE,
+      Component: <InstitutionPage />,
+      id: useId(),
+    }
   ];
 
   const PRIVATE_ROUTES = [

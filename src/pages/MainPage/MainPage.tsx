@@ -10,7 +10,6 @@ import orderImg from '../../assets/icons/order/orderimg.png';
 
 
 const MainPage = () => {
-
     const data = {
         title: 'Заказать страницу',
         description: 'Современные технологии достигли такого уровня, ' +
