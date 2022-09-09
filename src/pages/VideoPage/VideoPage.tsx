@@ -5,6 +5,8 @@ import styles from "./VideoPage.module.scss"
 import {ReportVideo} from "../../types/types";
 import CarouselVideos from "../../components/ui/carousel-videos/CarouselVideos";
 import preview from "../../assets/VideoPage/video-preview-lg.png"
+import OrderForPages from '../../components/ui/order-for-pages/OrderForPages';
+import orderImg from '../../assets/icons/order/orderimg.png';
 
 
 const VideoPage = () => {
@@ -85,10 +87,17 @@ const VideoPage = () => {
             "pubId": 1,
             "photographerId": 1
         },
-    ]
+    ];
+    
+    const data = {
+        title: 'Заказать страницу',
+        description: 'Закажите страницу для вашего мероприятия и получите больше клиентов',
+        image: orderImg
+    }
 
     return (
         <div className={styles.container}>
+                <OrderForPages data={data}/>
                 <div className={styles.player_wrapper}>
                 <Player videoReport={videoReports[0]}/>
             </div>

@@ -42,6 +42,20 @@ const MainRoutes = () => {
       path: PHOTO_PAGE,
       Component: <PhotoPage />,
       id: useId(),
+    },{
+      path: VIDEO_PAGE,
+      Component: <VideoPage />,
+      id: useId(),
+    },
+    {
+      path: VIDEO_PLAYER_PAGE,
+      Component: <VideoPlayerPage />,
+      id: useId(),
+    },
+    {
+      path: EVENT_PAGE,
+      Component: <EventPage />,
+      id: useId(),
     },
   ];
 
@@ -74,21 +88,6 @@ const MainRoutes = () => {
     {
       path: ADMIN_CONTACTS_PAGE,
       Component: <AdminContactsPage />,
-      id: useId(),
-    },
-    {
-      path: VIDEO_PAGE,
-      Component: <VideoPage />,
-      id: useId(),
-    },
-    {
-      path: VIDEO_PLAYER_PAGE,
-      Component: <VideoPlayerPage />,
-      id: useId(),
-    },
-    {
-      path: EVENT_PAGE,
-      Component: <EventPage />,
       id: useId(),
     },
     {

@@ -1,22 +1,25 @@
 import React from 'react';
 import styles from './OrderForPages.module.scss'
-import orderimg from '../../../assets/icons/order/orderimg.png'
+import orderImg from '../../../assets/icons/order/orderimg.png'
 
-const OrderForPages = () => {
+interface OrderData {
+    title: string,
+    description: string,
+    image: string
+}
+
+const OrderForPages = ({data}: {data: OrderData} ) => {
+
     return (
         <div className={styles.order}>
-            <div className={styles.order__inner}>
                 <div className={styles.order__image}>
-                    <img src={orderimg} alt=""/>
+                    <img src={orderImg} alt=""/>
                 </div>
                 <div className={styles.order__service}>
-                    <h1 className={styles.service__title}>Заказать сьёмку сейчас</h1>
-                    <p className={styles.service__text}>Современные технологии достигли такого уровня, что перспективное
-                        планирование способствует подготовке и реализации позиций, занимаемых участниками в отношении
-                        поставленных задач.</p>
+                    <h4>{data.title}</h4>
+                    <p>{data.description}</p>
                     <button className={styles.service__btn}>Позвонить</button>
                 </div>
-            </div>
         </div>
     );
 };
