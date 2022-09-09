@@ -19,10 +19,18 @@ const AdminPhotoPage = () => {
   const partyName = "Название вечеринки";
   const job = "Фотограф";
   const date = "Дата";
-  const pubName = "pub";
-  const party = "party";
-  const jobName = "job";
+  const pubName = "pubname";
+  const party = "eventname";
+  const jobName = "photographer";
   const dateName = "date";
+  const fileName = "eventphotos"
+
+  interface inputData {
+    pub: string,
+    party: string,
+    job: string,
+    date: string,
+  }
 
   const [data, setData] = useState({});
 
@@ -31,6 +39,7 @@ const AdminPhotoPage = () => {
   });
 
   const onSubmit = (data: {}) => {
+    console.log(data);
     setData(data);
     reset();
   }
@@ -48,9 +57,9 @@ const AdminPhotoPage = () => {
             <FileInputLink />
           </div>
           <div className={styles.content_textInputs}>
-            <TextInput title={institutionName} name={pubName} register={register} error={errors.pub} />
-            <TextInput title={partyName} name={party} register={register} error={errors.party} />
-            <TextInput title={job} name={jobName} register={register} error={errors.job} />
+            <TextInput title={institutionName} name={pubName} register={register} error={errors.pubname} />
+            <TextInput title={partyName} name={party} register={register} error={errors.eventname} />
+            <TextInput title={job} name={jobName} register={register} error={errors.photographer} />
             <TextInput title={date} name={dateName} register={register} error={errors.date} />
             <ViewsSlider />
             <PublishBtn />
