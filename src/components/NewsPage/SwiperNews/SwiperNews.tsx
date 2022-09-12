@@ -2,6 +2,7 @@ import React from 'react';
 import './SwiperNews.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper';
+import InformationArtist from '../InformationArtistBlock/InformationArtist';
 
 const SwiperNews = () => {
 
@@ -15,21 +16,13 @@ const SwiperNews = () => {
                 }}
                 modules={[Pagination]}
                 className="newsSwiper"
+                centeredSlides={true}
             >
                 <SwiperSlide className="newsSwiper__slide-container">
-
+                    <InformationArtist/>
                 </SwiperSlide>
                 <SwiperSlide className="newsSwiper__slide-container">
-
-                </SwiperSlide>
-                <SwiperSlide className="newsSwiper__slide-container">
-
-                </SwiperSlide>
-                <SwiperSlide className="newsSwiper__slide-container">
-
-                </SwiperSlide>
-                <SwiperSlide className="newsSwiper__slide-container">
-
+                    <InformationArtist/>
                 </SwiperSlide>
             </Swiper>
         </>
