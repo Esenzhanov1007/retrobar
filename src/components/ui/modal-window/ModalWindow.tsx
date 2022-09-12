@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 import './ModalWindow.scss'
-import {PlaceData} from "../../../types/types";
+import { PhotoEvent } from '../../../types/types';
 import Carousel from "../carousel-photos/Carousel";
 import ShareButton from "../share-button/ShareButton";
 
 const ModalWindow = ({active , setActive, data}: {
     active: boolean,
     setActive: React.Dispatch<React.SetStateAction<boolean>>,
-    data : PlaceData}) => {
+    data : PhotoEvent}) => {
     const [slideNumber, setSlideNumber] = useState(1);
 
     const closeModal = () => {
@@ -24,8 +24,8 @@ const ModalWindow = ({active , setActive, data}: {
                     className="modal_header">
                     <button className="modal_header__btn-close"
                         onClick={closeModal}></button>
-                    <h4 className="modal_header__title">{data.placeName}</h4>
-                    <span className="modal_header__subtitle">{data.eventName}</span>
+                    <h4 className="modal_header__title">{data.pubId}</h4>
+                    <span className="modal_header__subtitle">{data.eventname}</span>
                 </div>
                 <div
                     className="modal_body">
@@ -34,7 +34,7 @@ const ModalWindow = ({active , setActive, data}: {
                 <div
                     className="modal_footer">
                     <div className="modal_footer_photos-amount">
-                        <span className="">{slideNumber + ' из ' + data.photos.length}</span>
+                        <span className="">{slideNumber + ' из ' + data.eventphotos.length}</span>
                     </div>
                     <div className="modal_footer_btn-group">
                         <ShareButton/>
