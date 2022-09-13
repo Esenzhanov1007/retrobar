@@ -5,6 +5,7 @@ import TitleForPages from '../../components/ui/title-for-pages/titleForPages';
 import PhotoGrid from '../../components/Photo/PhotoGrid/PhotoGrid';
 import { useGetEventsPhotoQuery } from '../../store/features/PhotoPage/GetEventsPhoto';
 import { Audio } from 'react-loader-spinner'
+import CalendarButton from '../../components/ui/calendar-button/CalendarButton';
 
 const PhotoPage = () => {
 
@@ -12,6 +13,7 @@ const PhotoPage = () => {
 
     return (
         <div className={styles.container}>
+            <CalendarButton/>
             <TitleForPages title={'Актуальные фотоотчеты'}/>
             {data && <PhotoGrid data={data}/>}
             {isLoading && <Audio

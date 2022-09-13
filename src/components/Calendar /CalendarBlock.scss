@@ -1,0 +1,67 @@
+.calendarContainer {
+  display: flex;
+  flex-direction: column;
+  width: 1050px;
+  padding: 200px 15px 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.filterBlock {
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 100%;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+
+  &__item {
+    background: #C9C9C9;
+    color: #676767;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    padding: 12px 24px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+  }
+
+  &__item-active {
+    background: #FFB03B;
+    color: #000000;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    padding: 12px 24px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+  }
+
+}
+
+.contentBlock {
+  display: flex;
+
+
+  &__calendar {
+    width: 50%;
+    box-sizing: border-box;
+    background: #ffb03b;
+  }
+
+  &__events {
+    width: 50%;
+    box-sizing: border-box;
+    background: #2364aa;
+  }
+
+}
+
+.css-u0soqy-MuiPickerStaticWrapper-root  {
+  background: transparent;
+}
