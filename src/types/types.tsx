@@ -9,6 +9,17 @@ export interface PlaceData {
     photos: string[],
 }
 
+export interface PhotoEvent {
+    date: string,
+    eventname: string,
+    eventphotos: string[],
+    id: number,
+    link: string,
+    photographerId: number,
+    pubId: number,
+    views: number
+}
+
 export interface AdData {
     title: string,
     description: string,
