@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 
 
 import { PhotoEvent } from '../../../types/types';
+import { ENV } from '../../../consts/consts';
 
 const Carousel = ({data, setCount}: {data: PhotoEvent, setCount?: React.Dispatch<React.SetStateAction<number>>}) => {
 
@@ -19,7 +20,7 @@ const Carousel = ({data, setCount}: {data: PhotoEvent, setCount?: React.Dispatch
                 slidesPerView={1}
             >
                 {data.eventphotos.map((photo, i) => <SwiperSlide key={i}>
-                    <img className="image" src={photo} alt=""/>
+                    <img className="image" src={ENV + photo} alt=""/>
                 </SwiperSlide>)}
             </Swiper>
     );

@@ -13,6 +13,7 @@ const VIDEO_PAGE = "/videos";
 const VIDEO_PLAYER_PAGE = "/videos/player/:id";
 const EVENT_PAGE = "/events";
 const NEWS_PAGE = '/news';
+const ENV = 'http://192.168.99.96:3001';
 
 export {
   API,
@@ -29,5 +30,6 @@ export {
   VIDEO_PAGE,
   VIDEO_PLAYER_PAGE,
   EVENT_PAGE,
-  NEWS_PAGE
+  NEWS_PAGE,
+  ENV
 }

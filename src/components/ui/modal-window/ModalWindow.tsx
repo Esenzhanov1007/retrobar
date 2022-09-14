@@ -14,6 +14,8 @@ const ModalWindow = ({active , setActive, data}: {
         setActive(false);
     }
 
+    console.log(active)
+
     return (
         <div className={active ? "fade_block active" : "fade_block" }
              onClick={closeModal}>

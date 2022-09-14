@@ -10,12 +10,11 @@ import PlaceCard from '../Photo/PlaceCard/PlaceCard';
 import dayjs from 'dayjs';
 
 
-const CalendarBlock = ({active , setActive}: {
-    active: boolean,
-    setActive: React.Dispatch<React.SetStateAction<boolean>>}) => {
+const CalendarBlock = ({open , setOpen}: {
+    open: boolean,
+    setOpen: React.Dispatch<React.SetStateAction<boolean>>}) => {
 
     const [value, setValue] = useState(new Date());
-
     const [fetchData, {data, isLoading}] = useLazyGetEventsPhotoByDateQuery();
 
     useEffect(() => {
@@ -23,9 +22,9 @@ const CalendarBlock = ({active , setActive}: {
     }, [value]);
 
     return (
-        <div className={active ? "fade_block active" : "fade_block"}
+        <div className={open ? "fade_block active" : "fade_block"}
              onClick={(e) =>
-                 setActive(false)}>
+                 setOpen(false)}>
             <div className="calendarContainer"
                  onClick={e => e.stopPropagation()}>
                 <ul className="filterBlock">
@@ -46,6 +45,12 @@ const CalendarBlock = ({active , setActive}: {
                         {data?.map((item, i) => (<div key={i} className="item">
                             <PlaceCard data={item}/>
                         </div>))}
+                        {isLoading && <div className="item">Loading...</div>}
+                        {!data?.length &&
+                            !isLoading &&
+                            <div className="dataEmpty">
+                                <h3 className='dataEmpty__title'>По выбранной дате нет событий</h3>
+                            </div>}
                     </div>
                 </div>
                 <LowerBlock/>

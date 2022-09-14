@@ -46,8 +46,13 @@
 
 .contentBlock {
   display: flex;
-  gap: 1em;
   align-items: center;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
 
   &__calendar {
     width: 37%;
@@ -58,6 +63,11 @@
     background-repeat: no-repeat;
     background-size: cover;
     padding: 30px 0;
+    @media (max-width: 900px) {
+      width: 90%;
+      margin: 0 auto;
+
+    }
   }
 
   &__events {
@@ -70,18 +80,34 @@
     align-items: start;
     gap: 15px;
     flex-wrap: wrap;
-
     height: 500px;
+    @media (max-width: 900px) {
+      width: 90%;
+      margin: 0 auto;
+    }
 
     & > .item {
-      width: 295px;
+      width: 320px;
       height: 219px;
-      border: 1px solid #000000;
+      color: #EBEBEB;
       border-radius: 10px;
       overflow: hidden;
+
     }
   }
 
+}
+.dataEmpty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  &__title {
+    color: #FFB03B;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e70220;
+  }
 }
 
 .react-calendar {

@@ -4,14 +4,13 @@ import {Navigation} from "swiper";
 import './CarouselVideos.scss'
 import {ReportVideo} from "../../../types/types";
 import VideoReport from "../../Video/VideoReport/VideoReport";
+import convertedDate from '../../../utilits/utils';
+
 
 
 const CarouselVideos = ({videoReports}: { videoReports: ReportVideo[] }) => {
 
-    const convertedDate = (date: string) => {
-        const newDate = new Date(date);
-        return newDate.toLocaleString('ru', {day: 'numeric', month: 'long', year: 'numeric'});
-    };
+
 
     return (
         <>

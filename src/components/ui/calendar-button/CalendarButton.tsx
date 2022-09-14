@@ -3,19 +3,19 @@ import './CalendarButton.scss';
 import CalendarBlock from '../../Calendar/CalendarBlock';
 
 const CalendarButton = () => {
-    const [calendarActive, setCalendarActive] = useState(false);
+    const [openCalendar, setOpenCalendar] = useState(false);
 
     return (
         <>
             <span
                 className="calendar"
-                onClick={() => setCalendarActive(!calendarActive)}
+                onClick={() => setOpenCalendar(!openCalendar)}
             >
                 Календарь
             </span>
             <CalendarBlock
-                active={calendarActive}
-                setActive={setCalendarActive}
+                open={openCalendar}
+                setOpen={setOpenCalendar}
             />
 
         </>
