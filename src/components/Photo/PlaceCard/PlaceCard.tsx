@@ -8,7 +8,7 @@ const PlaceCard = ({data}: { data: PhotoEvent }) => {
 
     return (
         <div className={styles.place_card} onClick={() => setModalActive(true)}>
-            <img className={styles.place_card__image} alt="" src={data.eventphotos[0]}/>
+            <img className={styles.place_card__image} alt="" src={'http://192.168.99.96:3001' + data.eventphotos[0]}/>
             <div className={styles.place_card__body}>
                 <h4 className={styles.body_title}>
                     {data.eventname}

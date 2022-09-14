@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import './CalendarButton.scss';
-import CalendarBlock from '../../Calendar /CalendarBlock';
+import CalendarBlock from '../../Calendar/CalendarBlock';
 
 const CalendarButton = () => {
-
     const [calendarActive, setCalendarActive] = useState(false);
-    console.log(calendarActive)
 
     return (
         <>
@@ -15,7 +13,6 @@ const CalendarButton = () => {
             >
                 Календарь
             </span>
-
             <CalendarBlock
                 active={calendarActive}
                 setActive={setCalendarActive}
