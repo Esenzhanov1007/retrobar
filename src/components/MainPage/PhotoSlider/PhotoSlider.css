@@ -1,7 +1,8 @@
 .mySwiper {
+    padding: 40px 0;
 }
 
-.swiper {
+.mySwiper .swiper {
     width: 100%;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -49,6 +50,12 @@
     color: #FFFFFF;
 }
 
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+}
+
 .mySwiper .swiper-pagination-bullet-active {
     opacity: 1;
     color: #fff;
@@ -58,13 +65,13 @@
     .mySwiper {
     }
 
-    .swiper {
+    .mySwiper .swiper {
         width: 100%;
         padding-top: 50px;
         padding-bottom: 50px;
     }
 
-    .swiper-slide {
+    .mySwiper .swiper-slide {
         background-position: center;
         background-size: cover;
         flex-shrink: inherit !important;
@@ -98,13 +105,13 @@
     .mySwiper {
     }
 
-    .swiper {
+    .mySwiper .swiper {
         width: 100%;
         padding-top: 50px;
         padding-bottom: 50px;
     }
 
-    .swiper-slide {
+    .mySwiper .swiper-slide {
         background-position: center;
         background-size: cover;
         flex-shrink: inherit !important;
@@ -138,13 +145,13 @@
     .mySwiper {
     }
 
-    .swiper {
+    .mySwiper .swiper {
         width: 100%;
         padding-top: 50px;
         padding-bottom: 50px;
     }
 
-    .swiper-slide {
+    .mySwiper .swiper-slide {
         background-position: center;
         background-size: cover;
         flex-shrink: inherit !important;
@@ -178,13 +185,13 @@
     .mySwiper {
     }
 
-    .swiper {
+    .mySwiper .swiper {
         width: 100%;
         padding-top: 50px;
         padding-bottom: 50px;
     }
 
-    .swiper-slide {
+    .mySwiper .swiper-slide {
         background-position: center;
         background-size: cover;
         flex-shrink: inherit !important;
@@ -218,13 +225,13 @@
     .mySwiper {
     }
 
-    .swiper {
+    .mySwiper .swiper {
         width: 100%;
         padding-top: 50px;
         padding-bottom: 50px;
     }
 
-    .swiper-slide {
+    .mySwiper .swiper-slide {
         background-position: center;
         background-size: cover;
         flex-shrink: inherit !important;
@@ -259,7 +266,7 @@
     .mySwiper {
     }
 
-    .swiper {
+    .mySwiper .swiper {
         width: 100%;
         padding-top: 50px;
         padding-bottom: 50px;
@@ -309,6 +316,7 @@
         letter-spacing: 0.05em;
         text-transform: uppercase;
         color: #FFFFFF;
+
     }
 
     .swiper-pagination-bullet-active {

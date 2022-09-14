@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import logo from '../../assets/icons/logo.svg'
 import search from '../../assets/icons/search.svg'
 import star from '../../assets/icons/bigstarburger.svg'
-import {NavLink} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import styles from './Header.module.scss'
 import SearchForm from "../search-form/SearchForm";
 import {FcMenu} from "react-icons/all";
@@ -46,9 +46,9 @@ const Header = () => {
             <div className={styles.header__container}>
                 <div className={styles.header__inner}>
                     <div className={styles.header__logo}>
-                        <a href="#">
+                        <Link to='/'>
                             <img src={logo} alt=""/>
-                        </a>
+                        </Link>
                     </div>
                     <nav className={styles.menu}>
                         {data.map((item, index) => (

@@ -97,7 +97,7 @@ const VideoPage = () => {
 
     return (
         <div className={styles.container}>
-                <OrderForPages data={data}/>
+                <OrderForPages/>
                 <div className={styles.player_wrapper}>
                 <Player videoReport={videoReports[0]}/>
             </div>
