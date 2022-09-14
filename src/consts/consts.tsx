@@ -13,6 +13,7 @@ const VIDEO_PAGE = "/videos";
 const VIDEO_PLAYER_PAGE = "/videos/player/:id";
 const EVENT_PAGE = "/events";
 const INSTITUTION_PAGE = '/institution'
+const NEWS_PAGE = '/news';
 
 export {
   API,
@@ -29,5 +30,6 @@ export {
   VIDEO_PAGE,
   VIDEO_PLAYER_PAGE,
   EVENT_PAGE,
-  INSTITUTION_PAGE
+  INSTITUTION_PAGE,
+  NEWS_PAGE
 }

@@ -12,7 +12,9 @@ import {
   PHOTO_PAGE,
   VIDEO_PAGE,
   VIDEO_PLAYER_PAGE,
-  EVENT_PAGE, INSTITUTION_PAGE,
+  INSTITUTION_PAGE,
+  EVENT_PAGE,
+  NEWS_PAGE
 } from "../consts/consts";
 
 import AdminAdvertisinPage from "../pages/AdminAdvertisingPage/AdminAdvertisinPage";
@@ -30,6 +32,7 @@ import VideoPage from "../pages/VideoPage/VideoPage";
 import VideoPlayerPage from "../pages/VideoPlayerPage/VideoPlayerPage";
 import EventPage from "../pages/EventPage/EventPage";
 import InstitutionPage from "../pages/InstitutionPage/InstitutionPage";
+import NewsPage from '../pages/NewsPage/NewsPage';
 
 const MainRoutes = () => {
 
@@ -62,7 +65,12 @@ const MainRoutes = () => {
       path: INSTITUTION_PAGE,
       Component: <InstitutionPage />,
       id: useId(),
-    }
+    },
+    {
+      path: NEWS_PAGE,
+      Component: <NewsPage />,
+      id: useId(),
+    },
   ];
 
   const PRIVATE_ROUTES = [

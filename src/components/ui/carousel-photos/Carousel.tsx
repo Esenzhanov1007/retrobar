@@ -6,12 +6,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 
-import {PlaceData} from "../../../types/types";
+import { PhotoEvent } from '../../../types/types';
 
-
-const Carousel = ({data, setCount}: {data: PlaceData, setCount?: React.Dispatch<React.SetStateAction<number>>}) => {
-
-
+const Carousel = ({data, setCount}: {data: PhotoEvent, setCount?: React.Dispatch<React.SetStateAction<number>>}) => {
 
     return (
             <Swiper
@@ -21,7 +18,7 @@ const Carousel = ({data, setCount}: {data: PlaceData, setCount?: React.Dispatch<
                 onActiveIndexChange={e => setCount && setCount(e.activeIndex + 1)}
                 slidesPerView={1}
             >
-                {data.photos.map((photo, i) => <SwiperSlide key={i}>
+                {data.eventphotos.map((photo, i) => <SwiperSlide key={i}>
                     <img className="image" src={photo} alt=""/>
                 </SwiperSlide>)}
             </Swiper>
