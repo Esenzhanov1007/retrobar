@@ -11,32 +11,37 @@ import tape2 from '../../../assets/InstitutionPage/tape 2.png';
 import React from "react";
 
 
-
 const InstitutionFilm = () => {
-  return (
-      <div className={styles.institution__wrapper}>
-          <img className={styles.institution__frame} src={film} alt=""/>
-          <img className={styles.institution__bgr} src={bgr} alt=""/>
-          <img className={styles.institution__bg} src={photo} alt=""/>
-          <div className={styles.institution__about}>
-              <div className={styles.institution__about__bgi}>
-                  <h6 className={styles.institution__about__title}>MINIBAR</h6>
-                  <div className={styles.institution__about__time}>
-                      <img src={clock} alt=""/>
-                      <p>18:00-06:00</p>
-                  </div>
-                  <div className={styles.institution__about__phone}>
-                      <img src={phone} alt=""/>
-                      <a href="tel:+996558550000">0 558 55 00 00</a>
-                  </div>
-                  <div className={styles.institution__about__geotag}>
-                      <img src={geotag} alt=""/>
-                      <p>Чынгыза Айтматова, 56</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-  );
+    return (
+        <div className={styles.institution}>
+            <div className={styles.institution__wrapper_frame_one}>
+                <img className={styles.institution__frame} src={film} alt=""/>
+                <img className={styles.institution__bgr} src={bgr} alt=""/>
+                <img className={styles.institution__bg} src={photo} alt=""/>
+                <div className={styles.institution__about}>
+                    <div className={styles.institution__about__bgi}>
+                        <h6 className={styles.institution__about__title}>MINIBAR</h6>
+                        <div className={styles.institution__about__time}>
+                            <img src={clock} alt=""/>
+                            <p>18:00-06:00</p>
+                        </div>
+                        <div className={styles.institution__about__phone}>
+                            <img src={phone} alt=""/>
+                            <a href="tel:+996558550000">0 558 55 00 00</a>
+                        </div>
+                        <div className={styles.institution__about__geotag}>
+                            <img src={geotag} alt=""/>
+                            <p>Чынгыза Айтматова, 56</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className={styles.institution__wrapper_frame_two}>
+                <img className={styles.institution__frame_two} src={film} alt=""/>
+                <img className={styles.institution__bg_two} src={photo2} alt=""/>
+            </div>
+        </div>
+    );
 };
 
 export default InstitutionFilm;

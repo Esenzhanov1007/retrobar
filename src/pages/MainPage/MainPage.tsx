@@ -6,6 +6,7 @@ import OrderForPages from "../../components/ui/order-for-pages/OrderForPages";
 import styles from './MainPage.module.scss'
 import Footer from "../../layout/Footer/Footer";
 import orderImg from '../../assets/icons/order/orderimg.png';
+import LowerBlock from "../../components/ui/lower-block/lowerBlock";
 
 
 
@@ -25,7 +26,8 @@ const MainPage = () => {
             </div>
             {/*<PhotoReport />*/}
             <Institution />
-            <OrderForPages data={data} />
+            <OrderForPages/>
+            <LowerBlock />
             <Footer />
         </div>
     );
