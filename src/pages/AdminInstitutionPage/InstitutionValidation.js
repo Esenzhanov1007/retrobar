@@ -1,12 +1,15 @@
 import * as yup from "yup";
 
 export const institutionSchema = yup.object().shape({
-  name: yup.string().required(),
-  description: yup.string().required(),
-  time: yup.string().required(),
+  pubname: yup.string().required(),
+  info: yup.string().required(),
+  workinghours: yup.string().required(),
   kitchen: yup.string().required(),
-  check: yup.string().required(),
-  services: yup.string().required(),
+  averagecheck: yup.number().required(),
+  service: yup.string().required(),
   location: yup.string().required(),
-  phone: yup.number().required(),
+  phone: yup.mixed().required(),
+  pubphotos: yup.mixed().required("Добавьте файл"),
+  publogo: yup.mixed().required("Добавьте файл"),
+  website: yup.string().required(),
 })

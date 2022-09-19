@@ -3,6 +3,17 @@
   color: white;
   font-size: 22px;
   margin: 0 0 0 17px ;
+  position: relative;
+
+  & span {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    height: 18px;
+    width: 100%;
+    font-size: 14px;
+    color: #ec5990;
+  }
 }
 
 .fileInputLinkWrapper h4 {

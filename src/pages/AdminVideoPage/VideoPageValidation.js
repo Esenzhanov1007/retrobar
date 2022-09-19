@@ -4,5 +4,7 @@ export const videoPageSchema = yup.object().shape({
   pub: yup.string().required("Поле обязательно к заполнению"),
   party: yup.string().required(),
   job: yup.string().required(),
-  date: yup.string().required()
+  date: yup.string().required(),
+  eventvideos: yup.mixed().required("Добавьте файл"),
+  multiplier: yup.number().required(),
 })

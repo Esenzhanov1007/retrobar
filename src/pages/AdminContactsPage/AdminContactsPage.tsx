@@ -15,6 +15,7 @@ import PublishBtn from '../../components/Admin/PublishBtn/PublishBtn';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { contactsSchema } from './ContactsValidation';
+import { useAddContactsMutation } from '../../store/features/Admin/Contacts/ContactsApi';
 
 const AdminContactsPage = () => {
 
@@ -23,11 +24,17 @@ const AdminContactsPage = () => {
   const textareaTitle = "О нас";
   const inputTitle = "Номер";
   const socialsTitle = "Социальные сети";
-  const telegram = "Telegram";
-  const instagram = "Instagram";
-  const youtube = "YouTube";
-  const aboutUs = "aboutus";
+  const telegram = "telegram";
+  const instagram = "instagram";
+  const youtube = "youtube";
+  const aboutUs = "info";
   const phone = "phone";
+  const email = "email";
+  const fileName = "photo";
+  const logoLink = "logoLink";
+  const telegramTitle = "Telegram";
+  const instagramTitle = "Instagram";
+  const youtubeTitle = "YouTube";
 
   const [data, setData] = useState({});
 
@@ -35,9 +42,26 @@ const AdminContactsPage = () => {
     resolver: yupResolver(contactsSchema),
   });
 
-  const onSubmit = (data: {}) => {
-    setData(data);
-    reset();
+  const [addContact] = useAddContactsMutation();
+
+  const onSubmit = (data: { [key: string]: any; }) => {
+    const phone = data.phone;
+    data.phone = JSON.stringify([phone]);
+    delete data.logoLink;
+    
+    const contact = new FormData();
+    Object.keys(data).forEach((key) => {
+      const value = data[key];
+      if (value[0] && typeof value !== "string" && typeof value[0] !== "string") {
+        Array.from(value as File[]).forEach((val) => {
+          contact.append(key, val);
+        });
+      } else {
+        contact.append(key, value);
+      }
+    });
+    addContact(contact);
+    // reset();
   }
 
   return (
@@ -49,14 +73,13 @@ const AdminContactsPage = () => {
             <div className={styles.fileInputTitleWrapper}>
               <h2 className={styles.fileInputTitle}>{title}</h2>
             </div>
-            <FileInput title={title} fileIcon={fileIcon} addFileTitle={addFileTitle} />
-            <FileInputLink />
+            <FileInput name={fileName} register={register} title={title} fileIcon={fileIcon} addFileTitle={addFileTitle} />
+            <FileInputLink name={logoLink} register={register} error={errors.logoLink} />
           </div>
           <div className={styles.content_textInputs}>
-            <Textarea title={textareaTitle} name={aboutUs} register={register} error={errors.aboutus} />
+            <Textarea title={textareaTitle} name={aboutUs} register={register} error={errors.info} />
             <TextInput title={inputTitle} name={phone} register={register} error={errors.phone} />
-            {/* <TextInput title={inputTitle} name={time} register={register} error={errors.time} /> */}
-            <ContactsInputLink />
+            <ContactsInputLink name={email} register={register} error={errors.email} />
           </div>
         </div>
         <div className={styles.contactsSocials}>
@@ -64,9 +87,9 @@ const AdminContactsPage = () => {
             <h2 className={styles.socialsTitle}>{socialsTitle}</h2>
           </div>
           <div className={styles.socialsInputsWrapper}>
-            <SocialsInput title={telegram} socialsIcon={telegramIcon} />
-            <SocialsInput title={youtube} socialsIcon={youtubeIcon} />
-            <SocialsInput title={instagram} socialsIcon={instagramIcon} />
+            <SocialsInput name={telegram} register={register} title={telegramTitle} socialsIcon={telegramIcon} error={errors.telegram} />
+            <SocialsInput name={youtube} register={register} title={youtubeTitle} socialsIcon={youtubeIcon} error={errors.youtube} />
+            <SocialsInput name={instagram} register={register} title={instagramTitle} socialsIcon={instagramIcon} error={errors.instagram} />
             <PublishBtn />
           </div>
         </div>

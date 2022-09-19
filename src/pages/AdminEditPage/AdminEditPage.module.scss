@@ -2,5 +2,29 @@
   width:  100%;
   min-height: 100vh;
   display: flex;
+  justify-content: flex-end;
   background-color: #000;
+}
+
+.edit_content {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 84%;
+  min-height: 101vh;
+}
+
+.contentNavigation {
+  margin-left: 5%;
+  width: 95%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.navigationTitle {
+  margin: 30px 0;
+  margin-left: 5%;
+  font-size: 32px;
+  color:#fff;
 }

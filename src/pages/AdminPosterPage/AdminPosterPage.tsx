@@ -12,6 +12,7 @@ const AdminPosterPage = () => {
 
   const title = "Реклама";
   const addFileTitle = "Добавить баннер";
+  const logolink = "logoLink";
 
   return (
     <div className={styles.main_container}>
@@ -24,7 +25,7 @@ const AdminPosterPage = () => {
           </div>
           <BannerInput title={title} fileIcon={fileIcon} addFileTitle={addFileTitle} />
           <div className={styles.FileInputLinkWrapper}>
-            <FileInputLink />
+            <FileInputLink name={logolink} register={(a) => a.toString()} error={logolink} />
           </div>
           <PublishBtn />
         </div>

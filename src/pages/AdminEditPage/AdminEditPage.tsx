@@ -6,6 +6,21 @@ const AdminEditPage = () => {
   return (
     <div className={styles.main_container}>
       <AdminNavbar />
+      <div className={styles.edit_content}>
+        <div className={styles.contentNavigation}>
+          <h2 className={styles.navigationTitle}>Изменить</h2>
+          <div className={styles.navigationButtons}>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import AdminNavbar from '../../components/Admin/AdminNavbar/AdminNavbar';
 import FileInput from '../../components/Admin/FileInput/FileInput';
 import styles from "./AdminInstitutionPage.module.scss";
@@ -14,6 +14,7 @@ import { institutionSchema } from './InstitutionValidation';
 import { useForm } from 'react-hook-form';
 import LineChart from './components/LineChart';
 import { Rating } from '@mui/material';
+import { useAddPubMutation } from '../../store/features/Admin/Institution/pubQueryApi';
 
 const AdminInstitutionPage = () => {
 
@@ -28,14 +29,18 @@ const AdminInstitutionPage = () => {
   const descrInputServices = "Услуги";
   const contactsLocation = "Геопозиция";
   const contactsPhone = "Номер";
-  const name = "name";
-  const descr = "description";
-  const time = "time";
+
+  const name = "pubname";
+  const descr = "info";
+  const time = "workinghours";
   const kitchen = "kitchen";
-  const check = "check";
-  const services = "services";
+  const check = "averagecheck";
+  const services = "service";
   const location = "location";
   const phone = "phone";
+  const fileName = "pubphotos";
+  const logoName = "publogo";
+  const contactsSocial = "website";
 
   const rateData = [
     {
@@ -86,16 +91,39 @@ const AdminInstitutionPage = () => {
       fill: true,
     }]
   })
-  const [data, setData] = useState({});
+
+  const [value, setValue] = useState<number | null>(2);
 
   const { register, handleSubmit, formState:{errors}, reset } = useForm({
     resolver: yupResolver(institutionSchema),
   });
 
-  const onSubmit = (data: {}) => {
-    setData(data);
+  const [postPub] = useAddPubMutation();
+
+  const onSubmit = (data: { [key: string]: any; }) => {
+    data.rating = value;
+    const phone = data.phone;
+    const location = data.location;
+    data.phone = JSON.stringify([phone]);
+    data.location = JSON.stringify([location]);
+    delete data.logoLink;
+    
+    const pub = new FormData();
+    Object.keys(data).forEach((key) => {
+      const value = data[key];
+      if (value[0] && typeof value !== "string" && typeof value[0] !== "string") {
+        Array.from(value as File[]).forEach((val) => {
+          console.log(`${key}`, val);
+          pub.append(key, val);
+        });
+      } else {
+        pub.append(key, value);
+      }
+    });
+    postPub(pub);
     reset();
   }
+
 
 
   return (
@@ -107,23 +135,29 @@ const AdminInstitutionPage = () => {
             <div className={styles.fileInputTitleWrapper}>
               <h2 className={styles.fileInputTitle}>{title}</h2>
             </div>
-            <FileInput title={title} fileIcon={fileIcon} addFileTitle={addFileTitle} />
+            <FileInput name={fileName} register={register} title={title} fileIcon={fileIcon} addFileTitle={addFileTitle} />
           </div>
-          <FileInputLogo addLogoTitle={addLogoTitle} logoIcon={logoIcon} />
+          <FileInputLogo name={logoName} register={register} addLogoTitle={addLogoTitle} logoIcon={logoIcon} />
         </div>
         <div className={styles.institutionInfoWrapper}>
           <div className={styles.institutionTitleInput}>
-            <TextInput title={institutionTitle} name={name} register={register} error={errors.name} />
+            <TextInput title={institutionTitle} name={name} register={register} error={errors.pubname} />
           </div>
           <div className={styles.institutionDescrInput}>
-            <Textarea title={descrTitle} name={descr} register={register} error={errors.description} />
+            <Textarea title={descrTitle} name={descr} register={register} error={errors.info} />
           </div>
         </div>
         <div className={styles.intitutionRatingWrapper}>
           <div className={styles.ratingTitleWrapper}>
             <div className={styles.ratingTitleStar}>
               <h3>Рейтинг</h3>
-              <Rating name="half-rating-read" defaultValue={5} precision={0.5} readOnly size='large' color='red' />
+              <Rating
+                name="simple-controlled"
+                value={value}
+                onChange={(event, newValue) => {
+                  setValue(newValue);
+                }}
+              />
             </div>
             <div className={styles.ratingTitle}>
               <h3>Рейтнг за май 2022</h3>
@@ -141,10 +175,10 @@ const AdminInstitutionPage = () => {
             <h2 className={styles.descrInputTitle}>Описание</h2>
           </div>
           <div className={styles.descrInputs}>
-            <TextInput title={descrInputSchedule} name={time} register={register} error={errors.time} />
+            <TextInput title={descrInputSchedule} name={time} register={register} error={errors.workinghours} />
             <TextInput title={descrInputKitchen} name={kitchen} register={register} error={errors.kitchen} />
-            <TextInput title={descrInputCheck} name={check} register={register} error={errors.check} />
-            <TextInput title={descrInputServices} name={services} register={register} error={errors.services} />
+            <TextInput title={descrInputCheck} name={check} register={register} error={errors.averagecheck} />
+            <TextInput title={descrInputServices} name={services} register={register} error={errors.service} />
           </div>
         </div>
         <div className={styles.institutionContactsWrapper}>
@@ -152,7 +186,7 @@ const AdminInstitutionPage = () => {
             <h2 className={styles.contactsTitle}>Контакты</h2>
           </div>
           <div className={styles.contactsLinkInput}>
-            <FileInputLink />
+            <FileInputLink name={contactsSocial} register={register} error={errors.website} />
           </div>
           <div className={styles.contactsInputs}>
             <TextInput title={contactsLocation} name={location} register={register} error={errors.location} />

@@ -18,7 +18,7 @@ const VideoPage = () => {
 
     return (
         <div className={styles.container}>
-        <OrderForPages data={dataAd}/>
+        <OrderForPages />
         <div className={styles.player_wrapper}>
             {data && <Player videoReport={data[1]}/>}
             {isLoading && <div style={{color: 'white'} }>loading...</div>}
