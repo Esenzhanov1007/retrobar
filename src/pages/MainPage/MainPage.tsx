@@ -18,6 +18,7 @@ const MainPage = () => {
             ' и реализации позиций, занимаемых участниками в отношении поставленных задач.',
         image: orderImg
     }
+
     return (
         <div className={styles.MainPage}>
             <div className={styles.div}>

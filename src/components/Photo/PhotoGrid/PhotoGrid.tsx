@@ -7,7 +7,6 @@ import { PhotoEvent } from '../../../types/types';
 const PhotoGrid = ({data}: {data: PhotoEvent[]}) => {
 
     let classNameItem = "grid_item grid_item_";
-
     return (
         <div className="grid">
             {data?.map((item, i) => (
