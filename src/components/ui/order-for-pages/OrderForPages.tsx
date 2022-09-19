@@ -3,7 +3,6 @@ import styles from './OrderForPages.module.scss'
 import orderImg from '../../../assets/icons/order/orderimg.png'
 import {OrderData, useGetAdQuery} from "../../../store/Ad/GetAd";
 
-
 const OrderForPages = () => {
     const {data, isLoading} = useGetAdQuery();
 
