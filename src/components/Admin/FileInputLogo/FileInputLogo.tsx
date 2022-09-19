@@ -5,19 +5,25 @@ import styles from "./FileInputLogo.module.scss";
 interface LogoInputProps {
   addLogoTitle: string;
   logoIcon: string;
+  register: (a: string) => {};
+  name: string;
 }
 
-const FileInputLogo:FC <LogoInputProps> = ({addLogoTitle, logoIcon}) => {
+const FileInputLogo:FC <LogoInputProps> = ({addLogoTitle, logoIcon, register, name}) => {
+
+  const logoLink = "logoLink";
+  const website = undefined;
+
   return (
     <div className={styles.logoContentWrapper}>
       <div className={styles.logoInputWrapper}>
       <input 
-        name='file' 
-        type="file" 
-        id="input_img" 
+        type="file"
+        id="input_img2"
         className={styles.logoInput}
+        {...register(name)}
         multiple/>
-      <label htmlFor="input_img" className={styles.logoInputBtn}>
+      <label htmlFor="input_img2" className={styles.logoInputBtn}>
         <span className={styles.logoInputIconWrapper}>
           <img className={styles.logoInputIcon} 
           src={logoIcon}
@@ -29,7 +35,7 @@ const FileInputLogo:FC <LogoInputProps> = ({addLogoTitle, logoIcon}) => {
         </span>
       </label>
       </div>
-      <FileInputLink />
+      <FileInputLink name={logoLink} register={register} error={website} />
     </div>
   );
 };

@@ -1,7 +1,12 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import styles from "./ViewsSlider.module.scss";
 
-const ViewsSlider = () => {
+interface viewsProps {
+  name: string;
+  register: (a: string) => {};
+}
+
+const ViewsSlider: FC<viewsProps> = ({name, register}) => {
 
   const [value, setValue] = useState(1);
 
@@ -35,6 +40,7 @@ const ViewsSlider = () => {
       max={3}
       value={value}
       style={{background: `linear-gradient(to right, rgba(255,176,59,1) 0%, rgba(255,176,59,1) ${(value - 1) * 50}%, rgb(200, 200, 200) ${(value - 1) * 50}%, rgba(153,153,153,1) 100%)`}}
+      {...register(name)}
       onChange={(e) => {
         setValue(Number(e.target.value));
       }} 

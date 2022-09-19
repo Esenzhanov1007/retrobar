@@ -6,4 +6,5 @@ export const photoPageSchema = yup.object().shape({
   photographer: yup.string().required("Поле обязательно к заполнению"),
   date: yup.string().required("Поле обязательно к заполнению"),
   eventphotos: yup.mixed().required("Добавьте файл"),
+  multiplier: yup.number().required(),
 })
