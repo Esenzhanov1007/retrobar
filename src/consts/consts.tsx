@@ -12,6 +12,7 @@ const PHOTO_PAGE = "/photo";
 const VIDEO_PAGE = "/videos";
 const VIDEO_PLAYER_PAGE = "/videos/player/:id";
 const EVENT_PAGE = "/events";
+const INSTITUTION_PAGE = '/institution'
 const NEWS_PAGE = '/news';
 const ENV = 'http://192.168.99.96:3001';
 
@@ -31,5 +32,6 @@ export {
   VIDEO_PLAYER_PAGE,
   EVENT_PAGE,
   NEWS_PAGE,
-  ENV
+  ENV,
+  INSTITUTION_PAGE,
 }
