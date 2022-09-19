@@ -8,13 +8,14 @@ function App() {
 
   const { pathname } = useLocation();
   const shouldShow = pathname.split("/")[1] !== "admin";
-
   return (
     <>
       {shouldShow && <Header />}
       <MainRoutes />
     </>
   );
+
+
 }
 
 export default App;

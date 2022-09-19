@@ -20,7 +20,6 @@ import {EffectCoverflow, Pagination} from "swiper";
 const PhotoSlider = () => {
 
 
-
     const data = [
         {
             image: photo2,

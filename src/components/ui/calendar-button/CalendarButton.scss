@@ -1,0 +1,27 @@
+.calendar {
+    position: fixed;
+    top: 40%;
+    right: 5%;
+    color: #fff;
+    z-index: 100;
+    text-indent: 100%;
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    border-radius: 50%;
+
+    &:hover {
+     box-shadow: 0 0 20px 0 rgb(255, 85, 87);
+     }
+
+    &::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100px;
+     height: 100px;
+     background: url('../../../../../retrobar_dev/src/assets/icons/calendar.svg') no-repeat;
+ }
+}
