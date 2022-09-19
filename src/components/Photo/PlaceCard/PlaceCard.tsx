@@ -2,12 +2,11 @@ import React, {useState} from 'react';
 import { PhotoEvent } from '../../../types/types';
 import styles from "./PlaceCard.module.scss"
 import ModalWindow from "../../ui/modal-window/ModalWindow";
-import convertedDate from '../../../utilits/utils';
+import { convertedDate } from '../../../utilits/utils';
 import { ENV } from '../../../consts/consts';
 
 const PlaceCard = ({data}: { data: PhotoEvent }) => {
     const [modalActive, setModalActive] = useState(false);
-    console.log(modalActive)
     return (
         <div className={styles.place_card} onClick={() => setModalActive(true)}>
             <img className={styles.place_card__image} alt="" src={ENV + data.eventphotos[0]}/>

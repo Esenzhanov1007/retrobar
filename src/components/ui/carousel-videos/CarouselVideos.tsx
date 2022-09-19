@@ -2,16 +2,10 @@ import React from 'react';
 import {SwiperSlide, Swiper} from "swiper/react";
 import {Navigation} from "swiper";
 import './CarouselVideos.scss'
-import {ReportVideo} from "../../../types/types";
-import VideoReport from "../../Video/VideoReport/VideoReport";
-import convertedDate from '../../../utilits/utils';
+import { convertedDate } from '../../../utilits/utils';
+import VideoReport from '../../Video/VideoReport/VideoReport';
 
-
-
-const CarouselVideos = ({videoReports}: { videoReports: ReportVideo[] }) => {
-
-
-
+const CarouselVideos = ({videoReports}: { videoReports: any }) => {
     return (
         <>
             <div>
@@ -22,11 +16,10 @@ const CarouselVideos = ({videoReports}: { videoReports: ReportVideo[] }) => {
                     className="videosSwiper"
                     slidesPerView={5}
                     spaceBetween={30}
-                    loop={true}
                 >
-                    {videoReports.map(video => (
+                    {videoReports.map((item: any) => (
                         <SwiperSlide>
-                            <VideoReport/>
+                            <VideoReport videoReport={item} />
                         </SwiperSlide>
                     ))}
                 </Swiper>

@@ -30,6 +30,7 @@ const PhotoPage = () => {
                 wrapperClass="wrapper-class"
                 visible={true}
             />}
+            {!data?.length && !isLoading && <div className={styles.no_data}>Нет данных</div>}
             <LowerBlock/>
         </div>
     );
